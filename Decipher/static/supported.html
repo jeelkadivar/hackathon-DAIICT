@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages Supported</title>
+</head>
+<body>
+    <table>
+        <caption>Languages Supported</caption>
+        <thead>
+          <tr>
+            <th scope="col">Sr. No</th>
+            <th scope="col">Language</th>
+            <th scope="col">Lannguage Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Account">1</td>
+            <td data-label="Due Date">Bengali</td>
+            <td data-label="Amount">bn</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Account">2</td>
+            <td data-label="Due Date">Gujarati</td>
+            <td data-label="Amount">gu</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Account">3</td>
+            <td data-label="Due Date">Hindi</td>
+            <td data-label="Amount">hi</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">4</td>
+            <td data-label="Due Date">Kannada</td>
+            <td data-label="Amount">kn</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">5</td>
+            <td data-label="Due Date">Malayalam</td>
+            <td data-label="Amount">ml</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">6</td>
+            <td data-label="Due Date">Marathi</td>
+            <td data-label="Amount">mr</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">7</td>
+            <td data-label="Due Date">Nepali</td>
+            <td data-label="Amount">ne</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">8</td>
+            <td data-label="Due Date">Odia</td>
+            <td data-label="Amount">or</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">9</td>
+            <td data-label="Due Date">Punjabi</td>
+            <td data-label="Amount">pa</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">10</td>
+            <td data-label="Due Date">Sindhi</td>
+            <td data-label="Amount">sd</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">11</td>
+            <td data-label="Due Date">Tamil</td>
+            <td data-label="Amount">ta</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">12</td>
+            <td data-label="Due Date">Telugu</td>
+            <td data-label="Amount">te</td>
+          </tr>
+          <tr>
+            <td scope="row" data-label="Acount">13</td>
+            <td data-label="Due Date">Urdu</td>
+            <td data-label="Amount">ur</td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        And more 80+ foreign languages.
+      </h2>
+</body>
+<style>
+    table {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+    }
+    
+    table caption {
+      font-size: 1.5em;
+      margin: .5em 0 .75em;
+    }
+    
+    table tr {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: .35em;
+    }
+    
+    table th,
+    table td {
+      padding: .625em;
+      text-align: center;
+    }
+    
+    table th {
+      font-size: .85em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    
+    @media screen and (max-width: 600px) {
+      table {
+        border: 0;
+      }
+    
+      table caption {
+        font-size: 1.3em;
+      }
+      
+      table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      
+      table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+      }
+      
+      table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+      }
+      
+      table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      table td:last-child {
+        border-bottom: 0;
+      }
+    }
+    
+    
+    
+    /* general styling */
+    body {
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.25;
+    }
+</style>
+</html>

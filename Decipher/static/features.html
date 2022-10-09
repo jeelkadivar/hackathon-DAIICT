@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jk"><h1>Features:-</h1></div>
+    <div class="container">
+        <div class="timeline">
+          <div class="line"></div>
+          <div class="step">
+            <div class="absolute left-1/2 bg-purple-300 h-4 w-4 transform  -translate-x-1/2 rounded-full"></div>
+            <div class="content">
+              <h1>Audio to Audio translation.</h1>
+            </div>
+          </div>
+          <div class="step">
+            <div class="absolute left-1/2 bg-purple-300 h-4 w-4 transform -translate-x-1/2 rounded-full"></div>
+            <div class="content">
+              <h1>Audio to Text Translation.</h1>
+            </div>
+          </div>
+          <div class="step">
+            <div class="absolute left-1/2 bg-purple-300 h-4 w-4 transform -translate-x-1/2 rounded-full"></div>
+            <div class="content">
+              <h1>Text to Text Translation : Useful for Notes and assignment Translation.</h1>
+            </div>
+          </div>
+          <div class="step">
+            <div class="absolute left-1/2 bg-purple-300 h-4 w-4 transform -translate-x-1/2 rounded-full"></div>
+            <div class="content">
+              <h1>Supports 106 Languages spoken all across the globe.</h1>
+            </div>
+          </div>
+          <!-- <div class="step">
+            <div class="absolute left-1/2 bg-purple-300 h-4 w-4 transform -translate-x-1/2 rounded-full"></div>
+            <div class="content">
+              <p>Item 5</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+</body>
+<style>
+/* global variables that aren't generated in codepen */
+*, :after, :before {
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-border-opacity: 1;
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    border-color: rgba(229,231,235,var(--tw-border-opacity));
+  scroll-behavior: smooth;
+}
+
+/* @apply doesn't work in codepen */
+.container {
+  @apply py-8 sm:py-14 px-4 lg:max-w-5xl mx-auto text-center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8rem 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px)
+.container {
+    max-width: 64rem;
+}
+
+.timeline {
+  @apply relative overflow-hidden -my-12;
+  overflow: hidden;
+  position: relative;
+}
+
+.line {
+  @apply bg-purple-300 absolute top-28 w-0.5 z-20;
+      --tw-bg-opacity: 1;
+  background-color: rgba(196,181,253,var(--tw-bg-opacity));
+  position: absolute;
+  top: 7rem;
+  width: .125rem;
+  z-index: 20;
+  left: calc(50% - 1px);
+  left: calc(50% - theme('spacing.px'));
+}
+
+.jk{
+    font-size:xx-large;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    margin-top: 10%
+}
+
+.step {
+  @apply flex items-center h-56 z-10 -translate-x-full relative opacity-0 duration-500;
+  @apply font-medium last:text-xl text-gray-500 last:text-sky-500 text-lg;
+  --tw-translate-x: -100%;
+  align-items: center;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 500;
+  height: 14rem;
+  opacity: 0;
+  position: relative;
+  transform: var(--tw-transform);
+  transition-duration: .5s;
+  z-index: 10;
+}
+
+.step:nth-child(odd) {
+  @apply text-left flex-row-reverse translate-x-full;
+  --tw-translate-x: 100%;
+  flex-direction: row-reverse;
+  text-align: left;
+  transform: var(--tw-transform);
+}
+
+.step:nth-child(even) {
+  @apply text-right;
+  text-align: right;
+}
+
+.content {
+  width: calc(50% - 32px);
+}
+
+.show-me:nth-child(n) {
+  @apply transform-none opacity-100;
+  opacity: 1;
+  transform: none;
+}
+</style>
+<script>
+const steps = document.querySelectorAll(".step");
+const timeline = document.querySelector(".timeline");
+const line = document.querySelector(".line");
+let prevScrollY = window.scrollY;
+let downDirection;
+let full = false;
+let set = 0;
+const targetY = window.innerHeight;
+
+function scrollHandler(e) {
+  const { scrollY } = window;
+  downDirection = scrollY < prevScrollY;
+  const timelineRect = timeline.getBoundingClientRect();
+  const lineRect = line.getBoundingClientRect();
+  const remToPx = parseInt(getComputedStyle(document.documentElement).fontSize);
+
+  // distance from top of timeline to bottom of window
+  const dist = targetY - timelineRect.top;
+  const lineDist = dist - 7 * remToPx;
+
+  if (!downDirection && !full) {
+    set = Math.max(set, lineDist);
+    line.style.bottom = `calc(100% - ${set}px)`;
+  }
+
+  if (lineDist > timeline.offsetHeight - 7 * remToPx && !full) {
+    line.style.bottom = "7rem";
+    full = true;
+  }
+
+  steps.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top + item.offsetHeight < targetY) {
+      item.classList.add("show-me");
+    }
+  });
+
+  prevScrollY = window.scrollY;
+}
+
+scrollHandler();
+window.addEventListener("scroll", scrollHandler);
+    
+</script>
+</html>
