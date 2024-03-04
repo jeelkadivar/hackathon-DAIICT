@@ -1,7 +1,7 @@
 #Decipher: Language Translation in Audio and Text Format
 Decipher is an innovative language translation project developed to provide seamless translation services in both audio and text formats. This project aims to bridge communication gaps by enabling users to translate spoken or written content between different languages effortlessly.
 
-#Features
+##Features
 Decipher offers a variety of features to facilitate accurate and efficient language translation:
 
 Text-to-Text Translation: Convert spoken language into text and translate it into the desired target language.
